@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>CKEditor 5 – classic editor build – development sample</title>
@@ -8,34 +9,46 @@
 			max-width: 800px;
 			margin: 20px auto;
 		}
+
 	</style>
 </head>
+
 <body>
 
-<h1>CKEditor 5 – classic editor build – development sample</h1>
+	<h1>CKEditor 5 – classic editor build – development sample</h1>
 
-<div id="editor">
-	<h2>Sample</h2>
+	<div id="editor">
+		<h2>Sample</h2>
 
-	<p>This is an instance of the <a href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor build</a>.</p>
+		<p>This is an instance of the
+			<a href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor build</a>.</p>
 
-	<figure class="image">
-		<img src="../tests/manual/sample.jpg" alt="Autumn fields" />
-	</figure>
+		<figure class="image">
+			<img src="../tests/manual/sample.jpg" alt="Autumn fields" />
+		</figure>
 
-	<p>You can use this sample to validate whether your <a href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html">custom build</a> works fine.</p>
-</div>
+		<p>You can use this sample to validate whether your
+			<a href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html">custom build</a> works fine.</p>
+	</div>
 
-<script src="../build/ckeditor.js"></script>
-<script>
-	ClassicEditor.create( document.querySelector( '#editor' ) )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} );
-</script>
+	<script src="../build/ckeditor.js"></script>
+	<script>
+		ClassicEditor
+			.create(document.querySelector('#editor'), {
+				qiniuUploader: {
+					url: 'https://upload-z1.qiniup.com',
+					fileUrl: 'https://f1.boating.top/',
+					token: 'N3LLyh709HZziYCMM0KxEJHHxoKABZoSUJquZ97I:lKJH78QR7W_K78k32fktA-e-adM=:eyJpbnNlcnRPbmx5IjowLCJzY29wZSI6ImJvYXRpbmciLCJkZWFkbGluZSI6MTUzMDM4NTcxM30='
+				}
+			})
+			.then(editor => {
+				window.editor = editor;
+			})
+			.catch(err => {
+				console.error(err.stack);
+			});
+	</script>
 
 </body>
+
 </html>

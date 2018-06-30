@@ -21,6 +21,7 @@ import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
 import ListPlugin from '@ckeditor/ckeditor5-list/src/list';
 import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import AlignmentPlugin from '@ckeditor/ckeditor5-alignment/src/alignment';
+import QiniuuploaderPlugin from '@liasica/ckeditor5-qiniu-uploader/src/qiniuuploader';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -42,7 +43,8 @@ ClassicEditor.build = {
 		LinkPlugin,
 		ListPlugin,
 		ParagraphPlugin,
-		AlignmentPlugin
+		AlignmentPlugin,
+		QiniuuploaderPlugin
 	],
 	config: {
 		toolbar: {
@@ -56,7 +58,6 @@ ClassicEditor.build = {
 				'alignment:right',
 				'alignment:center',
 				'alignment:justify',
-				'alignment',
 				'|',
 				'link',
 				'bulletedList',

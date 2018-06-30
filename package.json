@@ -46,6 +46,7 @@
 		"@ckeditor/ckeditor5-paragraph": "^10.0.1",
 		"@ckeditor/ckeditor5-theme-lark": "^10.1.0",
 		"@ckeditor/ckeditor5-upload": "^10.0.1",
+		"@liasica/ckeditor5-qiniu-uploader": "^1.0.0",
 		"babel-minify-webpack-plugin": "^0.3.0",
 		"postcss-loader": "^2.0.10",
 		"raw-loader": "^0.5.1",
