@@ -1,7 +1,7 @@
 {
 	"name": "@liasica/ckeditor5-build-classic",
-	"version": "1.0.0",
-	"description": "CKEditor 5 classic editor build.",
+	"version": "1.0.1",
+	"description": "CKEditor 5 classic editor build. Official version is v10.0.1 now.",
 	"keywords": [
 		"ckeditor5-build",
 		"CKEditor",
