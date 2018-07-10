@@ -20,6 +20,8 @@ module.exports = {
 		'@ckeditor/ckeditor5-autoformat/src/autoformat',
 		'@ckeditor/ckeditor5-basic-styles/src/bold',
 		'@ckeditor/ckeditor5-basic-styles/src/italic',
+		'@ckeditor/ckeditor5-basic-styles/src/strikethrough',
+		'@ckeditor/ckeditor5-basic-styles/src/underline',
 		'@ckeditor/ckeditor5-block-quote/src/blockquote',
 		'@ckeditor/ckeditor5-easy-image/src/easyimage',
 		'@ckeditor/ckeditor5-heading/src/heading',
@@ -32,17 +34,29 @@ module.exports = {
 		'@ckeditor/ckeditor5-list/src/list',
 		'@ckeditor/ckeditor5-paragraph/src/paragraph',
 		'@ckeditor/ckeditor5-alignment/src/alignment',
-		'@liasica/ckeditor5-qiniu-uploader/src/qiniuuploader',
+		'@ckeditor/ckeditor5-font/src/font',
+		'@ckeditor/ckeditor5-highlight/src/highlight',
+		'@ckeditor/ckeditor5-table/src/table',
+		'@ckeditor/ckeditor5-table/src/tabletoolbar',
+		'@liasica/ckeditor5-qiniu-uploader/src/qiniuuploader'
 	],
 
 	// Editor config.
 	config: {
 		toolbar: {
 			items: [
+				'undo',
+				'redo',
+				'|',
+				'fontSize',
+				'fontFamily',
 				'heading',
 				'|',
 				'bold',
 				'italic',
+				'underline',
+				'strikethrough',
+				'highlight',
 				'|',
 				'alignment:left',
 				'alignment:right',
@@ -54,21 +68,26 @@ module.exports = {
 				'numberedList',
 				'imageUpload',
 				'blockQuote',
-				'undo',
-				'redo',
-			],
+				'insertTable'
+			]
 		},
 
 		image: {
-			toolbar: [
-				'imageStyle:full',
-				'imageStyle:side',
-				'|',
-				'imageTextAlternative',
-			],
+			toolbar: ['imageStyle:full', 'imageStyle:side', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight', '|', 'imageTextAlternative'],
+			styles: [
+				// This option is equal to a situation where no style is applied.
+				'full',
+				// This represents an image aligned to the left.
+				'alignLeft',
+				// This represents an image aligned to the right.
+				'alignRight'
+			]
+		},
+		table: {
+			toolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
 		},
 
 		// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
-		language: 'zh-cn',
-	},
+		language: 'zh-cn'
+	}
 }
