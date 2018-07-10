@@ -73,7 +73,7 @@ module.exports = {
 		},
 
 		image: {
-			toolbar: ['imageStyle:full', 'imageStyle:side', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight', '|', 'imageTextAlternative'],
+            toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight' ],
 			styles: [
 				// This option is equal to a situation where no style is applied.
 				'full',

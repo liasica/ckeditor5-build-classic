@@ -89,13 +89,11 @@ ClassicEditor.build = {
 		},
 		image: {
 			toolbar: [
-				'imageStyle:full',
-				'imageStyle:side',
-				'imageStyle:alignLeft',
-				'imageStyle:alignCenter',
-				'imageStyle:alignRight',
+				'imageTextAlternative',
 				'|',
-				'imageTextAlternative'
+				'imageStyle:alignLeft',
+				'imageStyle:full',
+				'imageStyle:alignRight'
 			],
 			styles: [
 				'full',
