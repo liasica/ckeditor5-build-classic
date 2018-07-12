@@ -3,25 +3,25 @@
  * For licensing, see LICENSE.md.
  */
 
-'use strict';
+'use strict'
 
 /* eslint-env node */
 
-const path = require( 'path' );
-const webpack = require( 'webpack' );
-const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
-const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
-const UglifyJsWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
-const buildConfig = require( './build-config' );
+const path = require('path')
+const webpack = require('webpack')
+const { bundler, styles } = require('@ckeditor/ckeditor5-dev-utils')
+const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin')
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
+const buildConfig = require('./build-config')
 
 module.exports = {
 	devtool: 'source-map',
 	performance: { hints: false },
 
-	entry: path.resolve( __dirname, 'src', 'ckeditor.js' ),
+	entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
 
 	output: {
-		path: path.resolve( __dirname, 'build' ),
+		path: path.resolve(__dirname, 'build'),
 		filename: 'ckeditor.js',
 		libraryTarget: 'umd',
 		libraryExport: 'default',
@@ -32,7 +32,7 @@ module.exports = {
 		minimizer: [
 			// Use the newest version of UglifyJsWebpackPlugin that fixes the `inline` optimization bug.
 			// See https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/264.
-			new UglifyJsWebpackPlugin( {
+			new UglifyJsWebpackPlugin({
 				sourceMap: true,
 				uglifyOptions: {
 					output: {
@@ -40,26 +40,26 @@ module.exports = {
 						comments: /^!/
 					}
 				}
-			} )
+			})
 		]
 	},
 
 	plugins: [
-		new CKEditorWebpackPlugin( {
+		new CKEditorWebpackPlugin({
 			language: buildConfig.config.language,
 			additionalLanguages: 'all'
-		} ),
-		new webpack.BannerPlugin( {
+		}),
+		new webpack.BannerPlugin({
 			banner: bundler.getLicenseBanner(),
 			raw: true
-		} )
+		})
 	],
 
 	module: {
 		rules: [
 			{
 				test: /\.svg$/,
-				use: [ 'raw-loader' ]
+				use: ['raw-loader']
 			},
 			{
 				test: /\.css$/,
@@ -72,15 +72,15 @@ module.exports = {
 					},
 					{
 						loader: 'postcss-loader',
-						options: styles.getPostCssConfig( {
+						options: styles.getPostCssConfig({
 							themeImporter: {
-								themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
+								themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
 							},
 							minify: true
-						} )
-					},
+						})
+					}
 				]
 			}
 		]
 	}
-};
+}

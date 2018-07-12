@@ -1,6 +1,6 @@
 {
 	"name": "@liasica/ckeditor5-build-classic",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "CKEditor 5 classic editor build. Official version is v10.0.1 now.",
 	"keywords": [
 		"ckeditor5-build",
@@ -51,13 +51,14 @@
 		"@ckeditor/ckeditor5-upload": "^10.0.1",
 		"@liasica/ckeditor5-qiniu-uploader": "^1.0.0",
 		"babel-minify-webpack-plugin": "^0.3.0",
-		"postcss-loader": "^2.1.5",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"postcss-loader": "^2.1.6",
 		"raw-loader": "^0.5.1",
 		"style-loader": "^0.21.0",
 		"uglifyjs-webpack-plugin": "^1.2.7",
-		"webpack": "^4.15.0",
+		"webpack": "^4.15.1",
 		"webpack-cli": "^3.0.8",
-		"webpack-sources": "1.0.1"
+		"webpack-sources": "^1.1.0"
 	},
 	"engines": {
 		"node": ">=6.0.0",
